@@ -1,4 +1,4 @@
-package br.com.cvinicius.agency.application.api.account
+package br.com.cvinicius.agency.ui.api.provider
 
 /*
 import org.junit.jupiter.api.BeforeEach
@@ -12,6 +12,7 @@ import org.springframework.http.MediaType
 import org.springframework.test.web.reactive.server.WebTestClient
 import reactor.kotlin.core.publisher.toFlux
 import java.util.*
+
 
 @WebFluxTest(AccountApi::class)
 class AccountApiTest {

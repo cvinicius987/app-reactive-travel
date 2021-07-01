@@ -1,5 +1,6 @@
 package br.com.cvinicius.agency.application.api.transaction
 
+/*
 import br.com.cvinicius.agency.core.domain.transaction.Transaction
 import br.com.cvinicius.agency.core.domain.transaction.TransactionRepository
 import org.junit.jupiter.api.BeforeEach
@@ -49,3 +50,5 @@ class TransactionApiTest {
                 .expectBody(List::class.java)
     }
 }
+
+ */
