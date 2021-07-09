@@ -6,9 +6,9 @@ import reactor.core.publisher.Mono
 import java.util.*
 
 @Service
-internal class TravelUsecaseImpl(private val travelRepository: TravelRepository) : TravelUsecase {
+internal class GenerateTravelUsecaseImpl(private val travelRepository: TravelRepository) : GenarateTravelUsecase {
 
-    override fun generateTravel(newTravel: NewTravel): Mono<UUID> {
+    override fun generate(newTravel: NewTravel): Mono<UUID> {
 
         return Mono.just(UUID.randomUUID())
     }

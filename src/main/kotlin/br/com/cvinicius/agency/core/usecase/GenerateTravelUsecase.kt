@@ -9,7 +9,7 @@ data class NewTravel(val datetime:LocalDateTime,
                      val providerId:UUID,
                      val destinyId:UUID)
 
-interface TravelUsecase {
+interface GenarateTravelUsecase {
 
-    fun generateTravel(newTravel:NewTravel): Mono<UUID>
+    fun generate(newTravel:NewTravel): Mono<UUID>
 }

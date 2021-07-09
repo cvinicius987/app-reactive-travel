@@ -1,6 +1,6 @@
 package br.com.cvinicius.agency.web.api
 
-import br.com.cvinicius.agency.core.usecase.TravelUsecase
+import br.com.cvinicius.agency.core.usecase.GenarateTravelUsecase
 import br.com.cvinicius.agency.service.travel.TravelGateway
 import br.com.cvinicius.agency.service.travel.TravelResponse
 import br.com.cvinicius.agency.web.dto.TravelDto
@@ -12,13 +12,12 @@ import org.springframework.web.util.UriComponentsBuilder
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 import java.util.*
-import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.atomic.AtomicReference
 import javax.validation.Valid
 
 @RestController
 class TravelApi(private val travelGateway: TravelGateway,
-                private val travelUsecase: TravelUsecase) {
+                private val travelUsecase: GenarateTravelUsecase) {
 
     @GetMapping("/travel")
     fun getAll():ResponseEntity<Flux<TravelResponse>>{
@@ -47,7 +46,7 @@ class TravelApi(private val travelGateway: TravelGateway,
 
         val result = AtomicReference<UUID>()
 
-        travelUsecase.generateTravel(travelDto.to())
+        travelUsecase.generate(travelDto.to())
                      .subscribe { result.set(it) }
 
         return ResponseEntity
