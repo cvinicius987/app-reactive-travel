@@ -12,7 +12,7 @@ internal class GenerateTravelUsecaseImpl(private val travelRepository: TravelRep
     override fun generate(newTravel: NewTravel): Mono<UUID> {
 
         return Mono.just(newTravel).map {
-            Travel(UUID.randomUUID(), it.datetime, it.userId, it.providerId, it.destinyId)
+            Travel(UUID.randomUUID(), it.datetime, it.qtd, it.userId, it.providerId, it.destinyId)
         }.doOnNext {
             travelRepository.save(it)
         }.map {

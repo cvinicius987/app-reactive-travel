@@ -4,16 +4,12 @@ import br.com.cvinicius.agency.core.usecase.GenarateTravelUsecase
 import br.com.cvinicius.agency.service.travel.TravelGateway
 import br.com.cvinicius.agency.service.travel.TravelResponse
 import br.com.cvinicius.agency.web.dto.TravelDto
-import br.com.cvinicius.agency.web.dto.to
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import org.springframework.web.util.UriComponentsBuilder
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 import java.util.*
-import java.util.concurrent.atomic.AtomicReference
-import javax.validation.Valid
 
 @RestController
 class TravelApi(private val travelGateway: TravelGateway,
@@ -40,8 +36,11 @@ class TravelApi(private val travelGateway: TravelGateway,
     }
 
     @PostMapping("/travel")
-    fun save(@Valid @RequestBody travelDto: TravelDto):ResponseEntity<Void>{
+    fun save(@RequestBody travelDto: TravelDto):ResponseEntity<Void>{
 
+        println(travelDto)
+
+        /*
         val result = AtomicReference<UUID>()
 
         genarateTravelUsecase.generate(travelDto.to())
@@ -52,5 +51,8 @@ class TravelApi(private val travelGateway: TravelGateway,
                         .fromHttpUrl("http://localhost:8080/travel/${result.get()}")
                         .build().toUri())
                 .build()
+         */
+
+        return ResponseEntity.ok().build();
     }
 }

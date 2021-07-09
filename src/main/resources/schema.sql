@@ -1,14 +1,14 @@
 --================================================== DestinyEntity
 DROP TABLE IF EXISTS tbl_user;
 CREATE TABLE tbl_user (
-     id SERIAL CONSTRAINT pk_user_id PRIMARY KEY,
+     id uuid CONSTRAINT pk_user_id PRIMARY KEY,
      name varchar(50) NOT NULL
 );
 
 --================================================== DestinyEntity
 DROP TABLE IF EXISTS tbl_destiny;
 CREATE TABLE tbl_destiny (
- id SERIAL CONSTRAINT pk_destiny_id PRIMARY KEY,
+ id uuid CONSTRAINT pk_destiny_id PRIMARY KEY,
  name varchar(50) NOT NULL,
  value NUMERIC NOT NULL,
  state varchar(2) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE tbl_destiny (
 --================================================== DestinyEntity
 DROP TABLE IF EXISTS tbl_provider;
 CREATE TABLE tbl_provider (
-     id SERIAL CONSTRAINT pk_provider_id PRIMARY KEY,
+     id uuid CONSTRAINT pk_provider_id PRIMARY KEY,
      name varchar(50) NOT NULL
 );
 
@@ -28,6 +28,7 @@ DROP TABLE IF EXISTS tbl_travel;
 CREATE TABLE tbl_travel(
  id uuid CONSTRAINT pk_travel_id PRIMARY KEY,
  datetime TIMESTAMP NOT NULL,
+ qtd integer NOT NULL,
  user_id bigint NOT NULL,
  destiny_id bigint NOT NULL,
  provider_id bigint NOT NULL

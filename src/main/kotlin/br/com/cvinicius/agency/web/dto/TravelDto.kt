@@ -6,20 +6,27 @@ import java.util.*
 import javax.validation.constraints.Future
 import javax.validation.constraints.NotNull
 
-fun TravelDto.to() = NewTravel(datetime, userId, providerId, destinyId)
+fun TravelDto.to() = NewTravel(datetime!!, qtd!!, userId!!, providerId!!, destinyId!!)
 
-class TravelDto {
-
-    @NotNull
-    lateinit var userId:UUID
-
-    @NotNull
-    lateinit var providerId:UUID
-
-    @NotNull
-    lateinit var destinyId:UUID
+class TravelDto(
 
     @NotNull
     @Future
-    lateinit var datetime:LocalDateTime
+    var datetime:LocalDateTime? = null,
+
+    @NotNull
+    var qtd:Int? = null,
+
+    @NotNull
+    var userId:UUID? = null,
+
+    @NotNull
+    var providerId:UUID? = null,
+
+    @NotNull
+    var destinyId:UUID? = null){
+
+    override fun toString(): String {
+        return "TravelDto(datetime=$datetime, qtd=$qtd, userId=$userId, providerId=$providerId, destinyId=$destinyId)"
+    }
 }

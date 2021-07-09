@@ -7,6 +7,7 @@ import java.util.*
 class Travel(
         val id:UUID,
         val datetime:LocalDateTime,
+        val qtd:Int,
         val userId:UUID,
         val destinyId:UUID,
         val providerId:UUID){

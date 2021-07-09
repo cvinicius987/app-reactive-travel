@@ -2,7 +2,6 @@ package br.com.cvinicius.agency.infrastructure.dataprovider.travel
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table
-import java.math.BigDecimal
 import java.time.LocalDateTime
 import java.util.*
 
@@ -12,6 +11,8 @@ data class TravelEntity(
         val id:UUID,
 
         val datetime:LocalDateTime,
+
+        val qtd:Int,
 
         val userId:UUID,
 

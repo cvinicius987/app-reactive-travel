@@ -14,11 +14,11 @@ internal class TravelRepositorySql(private val template: R2dbcEntityTemplate) : 
     override fun save(travel: Travel):Mono<Travel> {
 
         val travelEntity = travel.run {
-            TravelEntity(id, datetime, userId, destinyId, providerId)
+            TravelEntity(id, datetime, qtd, userId, destinyId, providerId)
         }
 
         return template.insert(TravelEntity::class.java)
                        .using(travelEntity)
-                       .map { Travel(it.id, it.datetime, it.userId, it.destinyId, it.providerId) }
+                       .map { Travel(it.id, it.datetime, it.qtd, it.userId, it.destinyId, it.providerId) }
     }
 }
