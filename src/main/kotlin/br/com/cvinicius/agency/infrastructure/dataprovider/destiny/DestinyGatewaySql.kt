@@ -1,7 +1,7 @@
 package br.com.cvinicius.agency.infrastructure.dataprovider.destiny
 
-import br.com.cvinicius.agency.application.service.destiny.DestinyGateway
-import br.com.cvinicius.agency.application.service.destiny.DestinyResponse
+import br.com.cvinicius.agency.service.destiny.DestinyGateway
+import br.com.cvinicius.agency.service.destiny.DestinyResponse
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate
 import org.springframework.stereotype.Repository
 import reactor.core.publisher.Flux

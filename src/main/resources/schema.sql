@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS tbl_destiny;
 CREATE TABLE tbl_destiny (
  id SERIAL CONSTRAINT pk_destiny_id PRIMARY KEY,
  name varchar(50) NOT NULL,
+ value NUMERIC NOT NULL,
  state varchar(2) NOT NULL,
  description varchar(100)
 );
@@ -27,7 +28,6 @@ DROP TABLE IF EXISTS tbl_travel;
 CREATE TABLE tbl_travel(
  id uuid CONSTRAINT pk_travel_id PRIMARY KEY,
  datetime TIMESTAMP NOT NULL,
- value NUMERIC NOT NULL,
  user_id bigint NOT NULL,
  destiny_id bigint NOT NULL,
  provider_id bigint NOT NULL
