@@ -17,7 +17,7 @@ import javax.validation.Valid
 
 @RestController
 class TravelApi(private val travelGateway: TravelGateway,
-                private val travelUsecase: GenarateTravelUsecase) {
+                private val genarateTravelUsecase: GenarateTravelUsecase) {
 
     @GetMapping("/travel")
     fun getAll():ResponseEntity<Flux<TravelResponse>>{
@@ -36,8 +36,6 @@ class TravelApi(private val travelGateway: TravelGateway,
     @DeleteMapping("/travel/{id}")
     fun delete(@PathVariable("id") id:UUID):ResponseEntity<Void>{
 
-        travelGateway.deleteTravel(id)
-
         return ResponseEntity.status(HttpStatus.ACCEPTED).build()
     }
 
@@ -46,12 +44,12 @@ class TravelApi(private val travelGateway: TravelGateway,
 
         val result = AtomicReference<UUID>()
 
-        travelUsecase.generate(travelDto.to())
-                     .subscribe { result.set(it) }
+        genarateTravelUsecase.generate(travelDto.to())
+                             .subscribe { result.set(it) }
 
         return ResponseEntity
                 .created(UriComponentsBuilder
-                        .fromHttpUrl("http://localhost/travel/${result.get()}")
+                        .fromHttpUrl("http://localhost:8080/travel/${result.get()}")
                         .build().toUri())
                 .build()
     }

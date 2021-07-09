@@ -7,30 +7,15 @@ import java.time.LocalDateTime
 import java.util.*
 
 @Table(value = "tbl_travel")
-class TravelEntity(
+data class TravelEntity(
         @Id
         val id:UUID,
 
         val datetime:LocalDateTime,
 
-        val userId:Long,
+        val userId:UUID,
 
-        val destinyId:Long,
+        val destinyId:UUID,
 
-        val providerId:Long){
+        val providerId:UUID)
 
-        override fun equals(other: Any?): Boolean {
-                if (this === other) return true
-                if (javaClass != other?.javaClass) return false
-
-                other as TravelEntity
-
-                if (id != other.id) return false
-
-                return true
-        }
-
-        override fun hashCode(): Int {
-                return id.hashCode()
-        }
-}

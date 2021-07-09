@@ -9,6 +9,4 @@ interface TravelGateway {
     fun findAll(): Flux<TravelResponse>
 
     fun findById(id: UUID): Mono<TravelResponse>
-
-    fun deleteTravel(id:UUID)
 }

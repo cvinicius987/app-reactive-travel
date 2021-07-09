@@ -19,12 +19,4 @@ internal class TravelGatewaySql(private val template: R2dbcEntityTemplate) : Tra
     override fun findById(id: UUID): Mono<TravelResponse> {
         TODO("Not yet implemented")
     }
-
-    override fun save(travelResponse: TravelResponse) {
-        TODO("Not yet implemented")
-    }
-
-    override fun deleteTravel(id: UUID) {
-        TODO("Not yet implemented")
-    }
 }

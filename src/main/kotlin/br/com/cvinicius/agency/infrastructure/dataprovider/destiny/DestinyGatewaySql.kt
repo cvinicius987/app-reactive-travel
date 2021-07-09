@@ -14,6 +14,6 @@ internal class DestinyGatewaySql(private val template: R2dbcEntityTemplate) : De
         return template.select(DestinyEntity::class.java)
                         .from("tbl_destiny")
                         .all()
-                        .map { DestinyResponse(it.id, it.name, it.state, it.description) }
+                        .map { DestinyResponse(it.id, it.name, it.value, it.state, it.description) }
     }
 }
