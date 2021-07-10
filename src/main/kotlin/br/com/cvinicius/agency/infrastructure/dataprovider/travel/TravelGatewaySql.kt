@@ -45,9 +45,9 @@ internal class TravelGatewaySql(private val template: R2dbcEntityTemplate,
                                          LocalDateTime.now(),
                                          Integer.valueOf(it["qtd"] as String),
                                          BigDecimal.ZERO,
-                                         it["destiny"] as String,
-                                         it["provider"] as String,
-                                         it["username"] as String) }
+                                         UUID.fromString(it["destiny"] as String),
+                                          UUID.fromString(it["provider"] as String),
+                                          UUID.fromString(it["username"] as String)) }
     }
 
     override fun findById(id: UUID): Mono<TravelResponse> {

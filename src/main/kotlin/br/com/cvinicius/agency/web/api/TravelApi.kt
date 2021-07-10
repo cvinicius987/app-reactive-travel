@@ -4,16 +4,24 @@ import br.com.cvinicius.agency.core.usecase.GenarateTravelUsecase
 import br.com.cvinicius.agency.service.travel.TravelGateway
 import br.com.cvinicius.agency.service.travel.TravelResponse
 import br.com.cvinicius.agency.web.dto.TravelDto
+import br.com.cvinicius.agency.web.dto.toTravel
+import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
+import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
+import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.util.UriComponentsBuilder
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 import java.util.*
+import java.util.concurrent.atomic.AtomicReference
 
 @RestController
 class TravelApi(private val travelGateway: TravelGateway,
                 private val genarateTravelUsecase: GenarateTravelUsecase) {
+
+    private val logger = LoggerFactory.getLogger(javaClass)
 
     @GetMapping("/travel")
     fun getAll():ResponseEntity<Flux<TravelResponse>>{
@@ -35,15 +43,14 @@ class TravelApi(private val travelGateway: TravelGateway,
         return ResponseEntity.status(HttpStatus.ACCEPTED).build()
     }
 
-    @PostMapping("/travel")
-    fun save(@RequestBody travelDto: TravelDto):ResponseEntity<Void>{
+    @PostMapping(value=["/travel"], consumes=[MediaType.APPLICATION_JSON_VALUE])
+    fun save(@Validated @RequestBody travelDto: TravelDto):ResponseEntity<Void>{
 
-        println(travelDto)
+        logger.info("Registro de nova Travel: $travelDto")
 
-        /*
         val result = AtomicReference<UUID>()
 
-        genarateTravelUsecase.generate(travelDto.to())
+        genarateTravelUsecase.generate(travelDto.toTravel())
                              .subscribe { result.set(it) }
 
         return ResponseEntity
@@ -51,8 +58,5 @@ class TravelApi(private val travelGateway: TravelGateway,
                         .fromHttpUrl("http://localhost:8080/travel/${result.get()}")
                         .build().toUri())
                 .build()
-         */
-
-        return ResponseEntity.ok().build();
     }
 }

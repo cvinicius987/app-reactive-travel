@@ -29,9 +29,9 @@ CREATE TABLE tbl_travel(
  id uuid CONSTRAINT pk_travel_id PRIMARY KEY,
  datetime TIMESTAMP NOT NULL,
  qtd integer NOT NULL,
- user_id bigint NOT NULL,
- destiny_id bigint NOT NULL,
- provider_id bigint NOT NULL
+ user_id uuid NOT NULL,
+ destiny_id uuid NOT NULL,
+ provider_id uuid NOT NULL
 );
 
 ALTER TABLE tbl_travel ADD CONSTRAINT fk_travel_user FOREIGN KEY(user_id) REFERENCES tbl_user(id);

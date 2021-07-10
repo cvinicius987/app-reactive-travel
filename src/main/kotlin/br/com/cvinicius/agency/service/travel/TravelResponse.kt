@@ -8,6 +8,6 @@ data class TravelResponse(val id: UUID,
                           val datetime:LocalDateTime,
                           val qtd:Int,
                           val unitValue: BigDecimal,
-                          val destiny:String,
-                          val provider:String,
-                          val user:String)
+                          val destiny:UUID,
+                          val provider:UUID,
+                          val user:UUID)

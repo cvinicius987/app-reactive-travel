@@ -9,3 +9,5 @@ INSERT INTO tbl_provider(id, name) VALUES ('eb56b53e-328d-4650-a838-818a363e2541
 INSERT INTO tbl_destiny(id, name, value, state, description) VALUES ('8c89e80e-bed9-41f7-896d-dedf237db558', 'Cataratas do Iguaçu', 100.50, 'PR', 'Cataratas do Brasil localizada no Estado do Parana');
 INSERT INTO tbl_destiny(id, name, value, state, description) VALUES ('f257a6e9-ba2e-45b9-9d31-b79246921ef1', 'Ponta Negra', 134.65, 'RN', 'Praia de Ponta Negra em Natal');
 INSERT INTO tbl_destiny(id, name, value, state, description) VALUES ('318e5680-239f-494c-86d8-023b48fcd7d4', 'Porto Seguro', 98.25, 'BA', 'Praia de Porto Seguro com Passeio de Barco');
+
+INSERT INTO tbl_travel(id, datetime, qtd, user_id, destiny_id, provider_id) VALUES ('3223503a-6c7c-4bd7-aa52-5b58008d270f', '2021-08-01 12:00:00', 10,  '841103e5-2bd0-4126-b963-103002b73be7', '8c89e80e-bed9-41f7-896d-dedf237db558', '3cf42335-ce89-46c6-9288-dced1f62a7ec');
