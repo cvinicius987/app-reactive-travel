@@ -1,7 +1,7 @@
 package br.com.cvinicius.agency.infrastructure.dataprovider.travel
 
-import br.com.cvinicius.agency.service.travel.TravelGateway
-import br.com.cvinicius.agency.service.travel.TravelResponse
+import br.com.cvinicius.agency.core.dataprovider.travel.TravelGateway
+import br.com.cvinicius.agency.core.dataprovider.travel.TravelResponse
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate
 import org.springframework.r2dbc.core.DatabaseClient
 import org.springframework.stereotype.Repository

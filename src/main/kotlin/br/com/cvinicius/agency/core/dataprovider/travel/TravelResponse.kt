@@ -1,4 +1,4 @@
-package br.com.cvinicius.agency.service.travel
+package br.com.cvinicius.agency.core.dataprovider.travel
 
 import java.math.BigDecimal
 import java.time.LocalDateTime

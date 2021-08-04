@@ -1,7 +1,7 @@
 package br.com.cvinicius.agency.web.api
 
-import br.com.cvinicius.agency.service.destiny.DestinyGateway
-import br.com.cvinicius.agency.service.destiny.DestinyResponse
+import br.com.cvinicius.agency.core.dataprovider.destiny.DestinyGateway
+import br.com.cvinicius.agency.core.dataprovider.destiny.DestinyResponse
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController

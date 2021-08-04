@@ -1,4 +1,4 @@
-package br.com.cvinicius.agency.service.travel
+package br.com.cvinicius.agency.core.dataprovider.travel
 
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono

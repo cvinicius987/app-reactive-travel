@@ -12,9 +12,6 @@ target
 logs
 bin
 dockerfile
-/rel_value_invest-2019-07-16.xls
 /debug.log
-carteira-simples-backend.iml
 /cdk.out/
-
-TESTE
+app-reactive.travel.iml

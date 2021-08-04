@@ -1,4 +1,4 @@
-package br.com.cvinicius.agency.service.provider
+package br.com.cvinicius.agency.core.dataprovider.provider
 
 import java.util.*
 

@@ -1,4 +1,4 @@
-package br.com.cvinicius.agency.service.user
+package br.com.cvinicius.agency.core.dataprovider.user
 
 import java.util.*
 

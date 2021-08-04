@@ -1,8 +1,8 @@
 package br.com.cvinicius.agency.web.api
 
 import br.com.cvinicius.agency.core.usecase.GenarateTravelUsecase
-import br.com.cvinicius.agency.service.travel.TravelGateway
-import br.com.cvinicius.agency.service.travel.TravelResponse
+import br.com.cvinicius.agency.core.dataprovider.travel.TravelGateway
+import br.com.cvinicius.agency.core.dataprovider.travel.TravelResponse
 import br.com.cvinicius.agency.web.dto.TravelDto
 import br.com.cvinicius.agency.web.dto.toTravel
 import org.slf4j.LoggerFactory

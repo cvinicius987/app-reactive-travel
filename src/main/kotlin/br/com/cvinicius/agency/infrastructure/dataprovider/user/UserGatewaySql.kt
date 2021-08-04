@@ -1,7 +1,7 @@
 package br.com.cvinicius.agency.infrastructure.dataprovider.user
 
-import br.com.cvinicius.agency.service.user.UserGateway
-import br.com.cvinicius.agency.service.user.UserResponse
+import br.com.cvinicius.agency.core.dataprovider.user.UserGateway
+import br.com.cvinicius.agency.core.dataprovider.user.UserResponse
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate
 import org.springframework.stereotype.Repository
 import reactor.core.publisher.Flux

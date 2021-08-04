@@ -1,4 +1,4 @@
-package br.com.cvinicius.agency.service.destiny
+package br.com.cvinicius.agency.core.dataprovider.destiny
 
 import java.math.BigDecimal
 import java.util.*

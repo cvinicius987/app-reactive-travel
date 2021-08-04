@@ -1,4 +1,4 @@
-package br.com.cvinicius.agency.service.provider
+package br.com.cvinicius.agency.core.dataprovider.provider
 
 import reactor.core.publisher.Flux
 

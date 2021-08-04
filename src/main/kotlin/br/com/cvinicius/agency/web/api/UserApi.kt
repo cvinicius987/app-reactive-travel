@@ -1,7 +1,7 @@
 package br.com.cvinicius.agency.web.api
 
-import br.com.cvinicius.agency.service.user.UserGateway
-import br.com.cvinicius.agency.service.user.UserResponse
+import br.com.cvinicius.agency.core.dataprovider.user.UserGateway
+import br.com.cvinicius.agency.core.dataprovider.user.UserResponse
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController

@@ -7,8 +7,5 @@ import java.util.*
 @Component
 class StringToUUIDConverter : Converter<String, UUID> {
 
-    override fun convert(str: String): UUID {
-
-        return UUID.fromString(str)
-    }
+    override fun convert(str: String): UUID = UUID.fromString(str)
 }
