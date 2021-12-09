@@ -1,11 +1,11 @@
---================================================== DestinyEntity
+--================================================== User
 DROP TABLE IF EXISTS tbl_user;
 CREATE TABLE tbl_user (
      id uuid CONSTRAINT pk_user_id PRIMARY KEY,
      name varchar(50) NOT NULL
 );
 
---================================================== DestinyEntity
+--================================================== Destiny
 DROP TABLE IF EXISTS tbl_destiny;
 CREATE TABLE tbl_destiny (
  id uuid CONSTRAINT pk_destiny_id PRIMARY KEY,
@@ -15,7 +15,7 @@ CREATE TABLE tbl_destiny (
  description varchar(100)
 );
 
---================================================== DestinyEntity
+--================================================== Provider
 DROP TABLE IF EXISTS tbl_provider;
 CREATE TABLE tbl_provider (
      id uuid CONSTRAINT pk_provider_id PRIMARY KEY,

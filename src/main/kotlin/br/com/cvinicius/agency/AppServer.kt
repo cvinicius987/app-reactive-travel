@@ -13,7 +13,6 @@ fun main(args: Array<String>) {
 			.with {
 				it.allowBlockingCallsInside("java.util.UUID", "randomUUID")
 				it.allowBlockingCallsInside("org.slf4j.LoggerFactory", "info")
-
 			}.install()
 
 	runApplication<WalletServiceApplication>(*args)
